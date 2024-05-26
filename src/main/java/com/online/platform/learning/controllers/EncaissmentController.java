@@ -36,7 +36,7 @@ public class EncaissmentController {
     }
 
     // Create a new transcation
-    @PostMapping("/")
+    @PostMapping("/add")
     public Encaissment createEncaissement(@Valid @RequestBody Encaissment encaissment) {
         return encaissmentService.createEncaissment(encaissment);
     }

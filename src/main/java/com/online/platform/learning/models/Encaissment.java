@@ -18,8 +18,5 @@ public class Encaissment {
     private String motif;
     private String somme;
     private String status;
-
-    @ManyToOne
-    @JoinColumn(name = "bank_id", nullable = false)
-    private Bank banque;
+    private String banqueName;
 }

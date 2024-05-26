@@ -39,6 +39,7 @@ public class EncaissmentService {
             existingoptionalEncaissment.setSomme(encaissment.getSomme());
             existingoptionalEncaissment.setMotif(encaissment.getMotif());
             existingoptionalEncaissment.setMatricule(encaissment.getMatricule());
+            existingoptionalEncaissment.setBanqueName(encaissment.getBanqueName());
             return encaissmentRepository.save(existingoptionalEncaissment);
         }
         return null; // or throw an exception
