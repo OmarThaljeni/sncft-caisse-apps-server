@@ -14,8 +14,8 @@ public class DecaissementService {
     private DecaissementRepository decaissementRepository;
 
     // Method to get all transactions
-    public List<Decaissement> getAll() {
-        return decaissementRepository.findAll();
+    public List<Decaissement> getAllDencaissement(String email) {
+        return decaissementRepository.findAllByEmailUser(email);
     }
 
     // Method to get bank by ID

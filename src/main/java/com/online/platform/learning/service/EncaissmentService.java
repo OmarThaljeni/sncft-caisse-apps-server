@@ -14,8 +14,8 @@ public class EncaissmentService {
     private EncaissmentRepository encaissmentRepository;
 
     // Method to get all transcation
-    public List<Encaissment> getAll() {
-        return encaissmentRepository.findAll();
+    public List<Encaissment> getAllEncaissement(String email) {
+        return encaissmentRepository.findAllByEmailUser(email);
     }
 
     // Method to get bank by ID

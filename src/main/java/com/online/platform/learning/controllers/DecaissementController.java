@@ -18,9 +18,9 @@ public class DecaissementController {
     private DecaissementService decaissementService;
 
     // Get all transactions
-    @GetMapping("/")
-    public List<Decaissement> getAll() {
-        return decaissementService.getAll();
+    @GetMapping("/getAllEmail/{email}")
+    public List<Decaissement> getAll(@PathVariable(value = "email") String email) {
+        return decaissementService.getAllDencaissement(email);
     }
 
     // Get transaction by ID

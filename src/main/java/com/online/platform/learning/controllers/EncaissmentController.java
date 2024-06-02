@@ -20,9 +20,9 @@ public class EncaissmentController {
     private EncaissmentService encaissmentService;
 
     // Get all transcation
-    @GetMapping("/")
-    public  List<Encaissment> getAll() {
-        return encaissmentService.getAll();
+    @GetMapping("/getAllEmail/{email}")
+    public  List<Encaissment> getAll(@PathVariable(value = "email") String email) {
+        return encaissmentService.getAllEncaissement(email);
     }
 
     // Get transcation by ID

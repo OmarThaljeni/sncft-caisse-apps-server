@@ -48,21 +48,15 @@ public class UserService {
         Optional<User> userOptional = userRepository.findByEmail(email);
         if (userOptional.isPresent()) {
             User user = userOptional.get();
-            if(((Role) user.getRoles().toArray()[0]).getName().name().equals("USER")) {
-                ERole erole = ERole.valueOf("LEARNER");
-                Role role = roleRepository.findRoleByName(erole);
-                Set<Role> roles = new HashSet<>();
-                roles.add(role);
+            if(((Role) user.getRoles().toArray()[0]).getName().name().equals("CAISSIER")) {
                 user.setStatus("Accepté");
-                user.setRoles(roles);
-            } else {
-                user.setStatus("Accepté");
+                userRepository.save(user);
+                return ResponseEntity.ok("User status updated to Accepted");
             }
-            userRepository.save(user);
-            return ResponseEntity.ok("User status updated to Accepted");
         } else {
             return ResponseEntity.notFound().build();
         }
+        return null;
     }
 
     public ResponseEntity<String> cancelUserStatus(String email) {

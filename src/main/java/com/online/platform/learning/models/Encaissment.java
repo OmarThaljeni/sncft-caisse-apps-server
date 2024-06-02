@@ -19,4 +19,5 @@ public class Encaissment {
     private String somme;
     private String status;
     private String banqueName;
+    private String emailUser;
 }
